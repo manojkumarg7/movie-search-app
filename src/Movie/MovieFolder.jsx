@@ -71,7 +71,13 @@ const MovieFolder = () => {
                 <div key={movieIndex} className="card">
                   <img src={movie.Poster} alt={movie.Title} />
                   <h4 className="movie-title box">{movie.Title}</h4>
-                  {/* <a onClick={() => download(movie.Poster)}>Download</a> */}
+                  <a
+                    className="download-btn box"
+                    download
+                    onClick={() => download(movie.Poster)}
+                  >
+                    Download
+                  </a>
                 </div>
               );
             })}

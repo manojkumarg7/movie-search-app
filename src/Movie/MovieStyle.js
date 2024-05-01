@@ -3,8 +3,6 @@ import { styled } from "@mui/material";
 import React from "react";
 
 export const MovieStyle = styled("div")(({ theme }) => ({
-  //   color: "white",
-  //   backgroundColor: "black",
   padding: "10px",
   " .box": {
     display: "flex",
@@ -26,8 +24,7 @@ export const MovieStyle = styled("div")(({ theme }) => ({
     gap: "15px",
     " .card": {
       width: "320px",
-      //   height: "500px",
-      height: "450px",
+      height: "500px",
       backgroundColor: "black",
       display: "grid",
       justifyContent: "center",
@@ -35,6 +32,7 @@ export const MovieStyle = styled("div")(({ theme }) => ({
       position: "relative",
       border: "2px solid gray",
       borderRadius: "20px",
+      boxShadow: "6px 9px 8px gray",
 
       " img": {
         width: "300px",
@@ -46,8 +44,21 @@ export const MovieStyle = styled("div")(({ theme }) => ({
         inset: "380px 0 0 0 ",
         fontSize: "20px",
         padding: "10px",
+        cursor: "pointer",
       },
     },
+  },
+  " .download-btn": {
+    position: "absolute",
+    inset: "468px 0 0 0 ",
+    margin: "auto",
+    backgroundColor: "#A74930",
+    color: "white",
+    width: "200px",
+    height: "40px",
+    fontSize: "20px",
+    cursor: "pointer",
+    borderRadius: "10px",
   },
   [theme.breakpoints.down("sm")]: {
     " .m-header": {
