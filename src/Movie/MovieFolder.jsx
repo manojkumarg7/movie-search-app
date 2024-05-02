@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { MovieStyle } from "./MovieStyle";
 import axios from "axios";
 import { Grid, Button, TextField, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const MovieFolder = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const inputValue = (e) => {
@@ -21,9 +24,6 @@ const MovieFolder = () => {
         link.click();
       });
     });
-    // .catch((error) => {
-    //   console.error("Error fetching data:", error);
-    // });
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -69,8 +69,30 @@ const MovieFolder = () => {
             {data?.map((movie, movieIndex) => {
               return (
                 <div key={movieIndex} className="card">
-                  <img src={movie.Poster} alt={movie.Title} />
-                  <h4 className="movie-title box">{movie.Title}</h4>
+                  <Link
+                    to={"/output"}
+                    state={{
+                      title: "manojkumar g",
+                      Title: movie.Title,
+                      Year: movie.Year,
+                      Type: movie.Type,
+                      Poster: movie.Poster,
+                    }}
+                  >
+                    <div
+                      className="wraps"
+                      onClick={() => {
+                        navigate("/output");
+                      }}
+                    >
+                      <img
+                        src={movie.Poster}
+                        component={"img"}
+                        alt={`${movie.Title} not available`}
+                      />
+                      <h4 className="movie-title box">{movie.Title}</h4>
+                    </div>
+                  </Link>
                   <a
                     className="download-btn box"
                     download
