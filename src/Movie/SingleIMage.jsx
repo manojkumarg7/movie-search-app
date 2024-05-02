@@ -16,7 +16,7 @@ const SingleIMage = () => {
           <h1 className="title ">Title : {data?.state?.Title}</h1>
           <h1 className="year title">Year : {data?.state?.Year}</h1>
           <h1 className="type title year">Type: {data?.state?.Type}</h1>
-          <Button variant="contained" onClick={() => navigate("/")}>
+          <Button variant="contained" onClick={() => navigate(-2)}>
             Back
           </Button>
         </div>

@@ -6,11 +6,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MovieFolder />}></Route>
+        <Route path="/movie-search-app" element={<MovieFolder />}></Route>
         <Route path="output" element={<SingleIMage />}></Route>
       </Routes>
     </div>
-  );  
+  );
 }
 
 export default App;
