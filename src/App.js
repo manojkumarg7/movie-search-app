@@ -10,7 +10,7 @@ function App() {
         <Route path="output" element={<SingleIMage />}></Route>
       </Routes>
     </div>
-  );
+  );  
 }
 
 export default App;
